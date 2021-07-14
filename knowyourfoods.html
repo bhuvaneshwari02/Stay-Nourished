@@ -14,7 +14,14 @@
 <form method="post" action="">
     {% csrf_token %}
 <div class="wrapper">
-  <div class="label">Search For a Food</div>
+
+
+    <br>
+    <div id="label">Nutritional Composition provided here are for 1 medium fruit or vegetable or for 100 gram of a food</div>
+    </div>
+   <br>
+
+    <div class="label">Search For a Food</div>
   <div class="searchBar">
     <input type="text" id="searchQueryInput" name="searches" placeholder="Search with a Food Name for eg:apple;"  />
     <button id="searchQuerySubmit" type="submit">
@@ -24,13 +31,14 @@
   </div>
 
 
-       <br><br><br><br><br><br>
-    </div>
+<br><br><br><br><br>
 
-                  <div>
+     <div>
 
-       <table align="center" >
-
+       <table align="center">
+<tr bgcolor="#fff2b3">
+    <td colspan="2" >{{listobj.Nameofthefood}}</td>
+</tr>
            <tr  bgcolor="#fad105">
                <th>Nutrient</th>
                <th>Quantity (grams)</th>
@@ -46,11 +54,11 @@
            <tr bgcolor="#fff2b3">
                <td>Protein</td>
                <td>{{listobj.Protein}}</td>
-           </tr >
+           </tr>
            <tr bgcolor="#fad105">
                <td>Fat</td>
                <td>{{listobj.Fat}}</td>
-           </tr>>
+           </tr>
        </table>
 
       </div>
@@ -101,6 +109,13 @@ body {
   text-transform: uppercase;
   letter-spacing: +1.3px;
   margin-bottom: 1rem;
+}
+#label {
+  font-size: .925rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: +2.0px;
+
 }
 
 .searchBar {
